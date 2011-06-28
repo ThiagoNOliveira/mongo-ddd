@@ -1,0 +1,16 @@
+src/resources
+build
+log.txt
+ClientBin
+Bin
+bin
+*.cache
+src/imaging
+*.pidb
+*.userprefs
+App_Data
+resources
+Resources
+*.suo
+*.user
+obj
