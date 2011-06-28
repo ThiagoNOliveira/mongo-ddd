@@ -22,12 +22,8 @@ namespace Site.Cmd.Domain
 
 		public void AddDomain(DomainName domain)
 		{
-
-		}
-
-		public bool CanAddDomain(DomainName domain)
-		{
-			return new DomainNameIsUniqueToSiteRule().IsSatisfiedBy(domain);
+			if (!this.Domains.Contains(domain))
+				this.Domains.Add(domain);
 		}
 	}
 }

@@ -7,8 +7,14 @@ namespace Site.Cmd.Domain
 {
 	public class SiteRepository
 	{
-		public void AddDomainToSite(Site site, DomainName domain)
+		public void AddSite(Site site)
 		{
+			
+		}
+
+		public bool GetSiteByDomain(DomainName name)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

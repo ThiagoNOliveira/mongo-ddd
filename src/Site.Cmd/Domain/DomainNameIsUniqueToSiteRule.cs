@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public class DomainNameIsUniqueToSiteRule : Specification<DomainName>
+	public class DomainNameIsUniqueToSiteRule : Specification<SiteRepository>
 	{
-		public bool IsSatisfiedBy(DomainName data)
+		public bool IsSatisfiedBy(SiteRepository data)
 		{
 			throw new NotImplementedException();
 		}
