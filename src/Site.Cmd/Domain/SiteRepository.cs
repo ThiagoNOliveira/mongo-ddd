@@ -7,6 +7,13 @@ namespace Site.Cmd.Domain
 {
 	public class SiteRepository
 	{
+		Repository<Site> repo;
+		
+		public SiteRepository(Repository<Site> repo)
+		{
+			this.repo = repo;
+		}
+		
 		public void AddSite(Site site)
 		{
 			

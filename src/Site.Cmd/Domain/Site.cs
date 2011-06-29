@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Site.Cmd.Infrastructure;
 
 namespace Site.Cmd.Domain
 {
@@ -12,6 +13,7 @@ namespace Site.Cmd.Domain
 
 		public Site()
 		{
+			this.Domains = new List<DomainName>();
 		}
 
 		public void ChangeName(string name)
@@ -24,6 +26,11 @@ namespace Site.Cmd.Domain
 		{
 			if (!this.Domains.Contains(domain))
 				this.Domains.Add(domain);
+		}
+		public void RemoveDomain(DomainName domain)
+		{
+			if (this.Domains.Contains(domain))
+				this.Domains.Remove(domain);
 		}
 	}
 }
