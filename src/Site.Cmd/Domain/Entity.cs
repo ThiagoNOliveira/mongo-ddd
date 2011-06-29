@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class Entity<T>
+	public class Entity
 	{
 		public string Id { get; set; }
 		
@@ -15,9 +15,9 @@ namespace Site.Cmd.Infrastructure
 
 		public override bool Equals(object obj)
 		{
-			if (obj is Entity<T>)
+			if (obj is Entity)
 			{
-				var temp = (Entity<T>)obj;
+				var temp = (Entity)obj;
 
 				return !string.IsNullOrEmpty(this.Id) && !string.IsNullOrEmpty(temp.Id) && temp.Id == this.Id;
 			}

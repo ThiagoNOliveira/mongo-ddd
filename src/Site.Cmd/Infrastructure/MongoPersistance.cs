@@ -8,7 +8,7 @@ using MongoDB.Driver.Builders;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class MongoPersistance<T> where T : Entity<T>
+	public class MongoPersistance<T> where T : Entity
 	{
 		protected MongoContext context;
 		protected MongoCollection collection;

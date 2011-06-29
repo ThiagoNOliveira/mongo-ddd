@@ -6,7 +6,7 @@ using Site.Cmd.Infrastructure;
 
 namespace Site.Cmd.Domain
 {
-	public class Site : Entity<Site>
+	public class Site : Entity
 	{
 		IList<DomainName> _Domains;
 
