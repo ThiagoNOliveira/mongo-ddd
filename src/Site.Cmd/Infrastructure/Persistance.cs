@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Site.Cmd.Infrastructure
 {
-	public interface PersistanceRepository<T> where T : PersistanceRoot<T>
+	public interface Persistance<T> where T : PersistanceEntity<T>
 	{
 		T GetById(string id);
 		void Save(T data);

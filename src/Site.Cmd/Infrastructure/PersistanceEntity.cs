@@ -6,11 +6,11 @@ using MongoDB.Bson;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class PersistanceRoot<T>
+	public class PersistanceEntity<T>
 	{
 		public string Id { get; private set; }
 		
-		public PersistanceRoot()
+		public PersistanceEntity()
 		{
 			if (string.IsNullOrEmpty(this.Id) || this.Id == ObjectId.Empty.ToString())
 				this.Id = ObjectId.GenerateNewId().ToString();
@@ -18,9 +18,9 @@ namespace Site.Cmd.Infrastructure
 
 		public override bool Equals(object obj)
 		{
-			if (obj is PersistanceRoot<T>)
+			if (obj is PersistanceEntity<T>)
 			{
-				var temp = (PersistanceRoot<T>)obj;
+				var temp = (PersistanceEntity<T>)obj;
 
 				return !string.IsNullOrEmpty(this.Id) && !string.IsNullOrEmpty(temp.Id) && temp.Id == this.Id;
 			}

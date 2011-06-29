@@ -8,9 +8,9 @@ namespace Site.Cmd.Domain
 {
 	public class SiteRepository
 	{
-		SitePersistanceRepository repo;
+		SitePersistance repo;
 
-		public SiteRepository(SitePersistanceRepository repo)
+		public SiteRepository(SitePersistance repo)
 		{
 			this.repo = repo;
 		}

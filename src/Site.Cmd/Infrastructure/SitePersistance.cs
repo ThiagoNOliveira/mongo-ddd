@@ -6,8 +6,8 @@ using Site.Cmd.Domain;
 
 namespace Site.Cmd.Infrastructure
 {
-	public interface SitePersistanceRepository : PersistanceRepository<Cmd.Domain.Site>
+	public interface SitePersistance : Persistance<Domain.Site>
 	{
-		IList<Domain.Site> GetByDomain(DomainName name);
+		Domain.Site GetByDomain(DomainName name);
 	}
 }
