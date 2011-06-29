@@ -26,7 +26,7 @@ namespace Site.Cmd.Domain
 
 		public Site GetSiteByDomain(DomainName name)
 		{
-			throw new NotImplementedException();
+			return repo.GetByDomain(name);
 		}
 	}
 }

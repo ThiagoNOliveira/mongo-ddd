@@ -22,7 +22,7 @@ namespace Site.Cmd
 					lock (padlock)
 					{
 						container = new UnityContainer();
-						container.RegisterType<SitePersistance, MongoSitePersistance>(new InjectionConstructor(new MongoContext(), ConfigurationManager.AppSettings[Constants.Config_MongoDatabase]));
+						container.RegisterType<SitePersistance, MongoSitePersistance>(new InjectionConstructor(new MongoContext()));
 					}
 				}
 				return container;

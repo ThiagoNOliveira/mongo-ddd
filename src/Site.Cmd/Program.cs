@@ -11,6 +11,10 @@ namespace Site.Cmd
 		static void Main(string[] args)
 		{
 			var repo = Injection.Resolve<SiteRepository>();
+			var site = new Domain.Site();
+			site.Name = "This is a test site";
+			site.AddDomain(new DomainName("www.helloworld.com"));
+			repo.AddSite(site);
 		}
 	}
 }

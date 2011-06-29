@@ -8,29 +8,25 @@ namespace Site.Cmd.Domain
 {
 	public class Site : PersistanceEntity<Site>
 	{
-		public string Name { get; private set; }
-		public IList<DomainName> Domains { get; private set; }
+		IList<DomainName> _Domains;
+
+		public string Name { get; set; }
+		public IEnumerable<DomainName> Domains { get { return _Domains; } }
 
 		public Site()
 		{
-			this.Domains = new List<DomainName>();
-		}
-
-		public void ChangeName(string name)
-		{
-			//potential name check here. 
-			this.Name = name;
+			_Domains = new List<DomainName>();
 		}
 
 		public void AddDomain(DomainName domain)
 		{
 			if (!this.Domains.Contains(domain))
-				this.Domains.Add(domain);
+				_Domains.Add(domain);
 		}
 		public void RemoveDomain(DomainName domain)
 		{
 			if (this.Domains.Contains(domain))
-				this.Domains.Remove(domain);
+				_Domains.Remove(domain);
 		}
 	}
 }

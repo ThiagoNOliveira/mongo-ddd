@@ -6,6 +6,8 @@ namespace Site.Cmd
 	{
 		public const string Config_MongoConnection = "Default";
 		public const string Config_MongoDatabase = "MongoDatabase";
+
+		public const string Mongo_Collection_Site = "sites";
 	}
 }
 

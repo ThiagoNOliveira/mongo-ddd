@@ -9,8 +9,8 @@ namespace Site.Cmd.Infrastructure
 {
 	public class MongoSitePersistance : MongoPersistance<Domain.Site>, SitePersistance
 	{
-		public MongoSitePersistance(MongoContext context, string collectionName)
-			: base(context, collectionName)
+		public MongoSitePersistance(MongoContext context)
+			: base(context, Constants.Mongo_Collection_Site)
 		{
 		}
 
