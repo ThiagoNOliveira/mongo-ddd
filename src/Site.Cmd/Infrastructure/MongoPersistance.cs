@@ -4,6 +4,7 @@ using System.Linq;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
+using Site.Cmd.Domain;
 
 
 namespace Site.Cmd.Infrastructure

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public class DomainName : ValueObject<DomainName>
+	public class DomainName : ValueObject
 	{
 		private readonly string _domain;
 		public string Domain { get { return _domain; } }

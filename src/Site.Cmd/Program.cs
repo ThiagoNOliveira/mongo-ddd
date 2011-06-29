@@ -10,13 +10,15 @@ namespace Site.Cmd
 	{
 		static void Main(string[] args)
 		{
-			Infrastructure.Mappings.Initialize();
+			Infrastructure.MongoMappings.Initialize();
 
 			var repo = Injection.Resolve<SiteRepository>();
 			var site = new Domain.Site();
 			site.Name = "This is a test site";
 			site.AddDomain(new DomainName("www.helloworld.com"));
 			repo.AddSite(site);
+
+			var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
 		}
 	}
 }

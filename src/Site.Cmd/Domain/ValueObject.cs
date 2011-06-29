@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public class ValueObject<T>
+	public class ValueObject
 	{
 		public override bool Equals(object obj)
 		{
