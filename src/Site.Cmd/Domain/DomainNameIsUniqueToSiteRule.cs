@@ -5,11 +5,23 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public class DomainNameIsUniqueToSiteRule : Specification<SiteRepository>
+	public class DomainNameIsUniqueToSiteRule : RepositorySpecification<SiteRepository, Site>
 	{
-		public bool IsSatisfiedBy(SiteRepository data)
+		public DomainName CausedByDomain { get; private set; }
+
+		public bool IsSatisfiedBy(SiteRepository repo, Site data)
 		{
-			throw new NotImplementedException();
+			foreach (var domain in data.Domains)
+			{
+				var site = repo.GetSiteByDomain(domain);
+				if (site != null && site != data)
+				{
+					this.CausedByDomain = domain;
+					return false;
+				}
+			}
+
+			return true;
 		}
 	}
 }

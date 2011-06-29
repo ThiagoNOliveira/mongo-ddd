@@ -16,10 +16,14 @@ namespace Site.Cmd.Domain
 		
 		public void AddSite(Site site)
 		{
-			
+			var uniqueRule = new DomainNameIsUniqueToSiteRule();
+			if (uniqueRule.IsSatisfiedBy(this, site))
+				repo.Save(site);
+			else
+				throw new SiteDomainIsAlreadyTakenFailure(uniqueRule.CausedByDomain, site);
 		}
 
-		public bool GetSiteByDomain(DomainName name)
+		public Site GetSiteByDomain(DomainName name)
 		{
 			throw new NotImplementedException();
 		}

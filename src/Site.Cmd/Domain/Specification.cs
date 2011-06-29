@@ -5,8 +5,12 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public interface Specification<T>
+	public interface Specification<Entity>
 	{
-		bool IsSatisfiedBy(T data);
+		bool IsSatisfiedBy(Entity data);
+	}
+	public interface RepositorySpecification<Repository, Entity>
+	{
+		bool IsSatisfiedBy(Repository repo, Entity data);
 	}
 }
