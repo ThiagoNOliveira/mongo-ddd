@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Site.Cmd.Infrastructure;
 
 namespace Site.Cmd.Domain
 {
 	public class SiteRepository
 	{
-		Repository<Site> repo;
-		
-		public SiteRepository(Repository<Site> repo)
+		SitePersistanceRepository repo;
+
+		public SiteRepository(SitePersistanceRepository repo)
 		{
 			this.repo = repo;
 		}

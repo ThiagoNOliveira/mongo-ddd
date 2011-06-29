@@ -8,12 +8,12 @@ using MongoDB.Driver.Builders;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class BaseMongoRepository<T> where T : PersistanceRoot<T>
+	public class MongoRepository<T> where T : PersistanceRoot<T>
 	{
 		protected MongoContext context;
 		protected MongoCollection collection;
 
-		public BaseMongoRepository(MongoContext repo, string collectionName)
+		public MongoRepository(MongoContext repo, string collectionName)
 		{
 			this.context = repo;
 			this.collection = this.context.Collection<T>(collectionName);

@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Site.Cmd.Infrastructure
+{
+	public interface PersistanceRepository<T> where T : PersistanceRoot<T>
+	{
+		T GetById(string id);
+		void Save(T data);
+		void Delete(string id);
+		IList<T> FindAll();
+	}
+}

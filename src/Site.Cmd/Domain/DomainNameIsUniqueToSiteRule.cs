@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Site.Cmd.Domain
 {
-	public class DomainNameIsUniqueToSiteRule : RepositorySpecification<SiteRepository, Site>
+	public class DomainNameIsUniqueToSiteRule : AggregateSpecification<SiteRepository, Site>
 	{
 		public DomainName CausedByDomain { get; private set; }
 

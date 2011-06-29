@@ -9,7 +9,7 @@ namespace Site.Cmd.Domain
 	{
 		bool IsSatisfiedBy(Entity data);
 	}
-	public interface RepositorySpecification<Repository, Entity>
+	public interface AggregateSpecification<Repository, Entity>
 	{
 		bool IsSatisfiedBy(Repository repo, Entity data);
 	}
