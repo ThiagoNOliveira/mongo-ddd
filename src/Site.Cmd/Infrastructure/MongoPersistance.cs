@@ -8,7 +8,7 @@ using MongoDB.Driver.Builders;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class MongoPersistance<T> where T : PersistanceEntity<T>
+	public class MongoPersistance<T> where T : Entity<T>
 	{
 		protected MongoContext context;
 		protected MongoCollection collection;
@@ -29,7 +29,7 @@ namespace Site.Cmd.Infrastructure
 		}
 		public void Delete(string id)
 		{
-			collection.Remove(Query.EQ("_id", id));
+			collection.Remove(Query.EQ("Id", id));
 		}
 		public void Delete(T data)
 		{

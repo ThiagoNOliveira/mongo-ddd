@@ -6,7 +6,7 @@ using Site.Cmd.Infrastructure;
 
 namespace Site.Cmd.Domain
 {
-	public class Site : PersistanceEntity<Site>
+	public class Site : Entity<Site>
 	{
 		IList<DomainName> _Domains;
 

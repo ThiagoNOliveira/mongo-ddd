@@ -4,7 +4,7 @@ using Site.Cmd.Infrastructure;
 
 namespace Site.Cmd.Domain
 {
-	public interface Repository<T> where T : PersistanceEntity<T>
+	public interface Repository<T> where T : Entity<T>
 	{
 		T GetById(string id);
 		void Save(T data);

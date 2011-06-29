@@ -10,6 +10,8 @@ namespace Site.Cmd
 	{
 		static void Main(string[] args)
 		{
+			Infrastructure.Mappings.Initialize();
+
 			var repo = Injection.Resolve<SiteRepository>();
 			var site = new Domain.Site();
 			site.Name = "This is a test site";

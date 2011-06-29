@@ -2,25 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MongoDB.Bson;
 
 namespace Site.Cmd.Infrastructure
 {
-	public class PersistanceEntity<T>
+	public class Entity<T>
 	{
-		public string Id { get; private set; }
+		public string Id { get; set; }
 		
-		public PersistanceEntity()
+		public Entity()
 		{
-			if (string.IsNullOrEmpty(this.Id) || this.Id == ObjectId.Empty.ToString())
-				this.Id = ObjectId.GenerateNewId().ToString();
 		}
 
 		public override bool Equals(object obj)
 		{
-			if (obj is PersistanceEntity<T>)
+			if (obj is Entity<T>)
 			{
-				var temp = (PersistanceEntity<T>)obj;
+				var temp = (Entity<T>)obj;
 
 				return !string.IsNullOrEmpty(this.Id) && !string.IsNullOrEmpty(temp.Id) && temp.Id == this.Id;
 			}
