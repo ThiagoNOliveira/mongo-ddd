@@ -28,5 +28,15 @@ namespace Site.Cmd.Domain
 		{
 			return repo.GetByDomain(name);
 		}
+
+		public Site FindById(string id)
+		{
+			return repo.GetById(id);
+		}
+
+		public void RemoveSite(Site site)
+		{
+			repo.Delete(site.Id);
+		}
 	}
 }

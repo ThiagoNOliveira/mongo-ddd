@@ -7,7 +7,7 @@ namespace Site.Cmd.Domain
 {
 	public class DomainName : ValueObject
 	{
-		private readonly string _domain;
+		private string _domain;
 		public string Domain { get { return _domain; } }
 
 		public DomainName(string domain)

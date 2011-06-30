@@ -10,15 +10,40 @@ namespace Site.Cmd
 	{
 		static void Main(string[] args)
 		{
-			Infrastructure.MongoMappings.Initialize();
+			try
+			{
+				Infrastructure.MongoMappings.Initialize();
 
-			var repo = Injection.Resolve<SiteRepository>();
-			var site = new Domain.Site();
-			site.Name = "This is a test site";
-			site.AddDomain(new DomainName("www.helloworld.com"));
-			repo.AddSite(site);
+				var repo = Injection.Resolve<SiteRepository>();
+				var site = new Domain.Site();
+				site.Name = "This is a test site";
+				site.AddDomain(new DomainName("www.helloworld.com"));
+				repo.AddSite(site);
 
-			var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
+				var existing = repo.FindById(site.Id);
+				site.AddDomain(new DomainName("www.helloworld.com"));
+				repo.AddSite(site);
+				//var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
+
+				repo.RemoveSite(site);
+
+			}
+			catch (SpecificationException ex)
+			{
+				Console.WriteLine("Broken specification: " + ex.Message);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}			
+		}
+
+		static void Create()
+		{
+		}
+
+		static void Get()
+		{
 		}
 	}
 }
