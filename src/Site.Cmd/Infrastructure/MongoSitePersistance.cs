@@ -18,7 +18,7 @@ namespace Site.Cmd.Infrastructure
 
 		public Domain.Site GetByDomain(DomainName domain)
 		{
-			return this.Find(Query.In("_Domains", new BsonValue[] { domain.ToBson() })).FirstOrDefault();
+			return this.Find(Query.In("domains", new BsonValue[] { domain.ToBson() })).FirstOrDefault();
 		}
 	}
 }

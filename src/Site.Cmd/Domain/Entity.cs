@@ -7,8 +7,9 @@ namespace Site.Cmd.Domain
 {
 	public class Entity
 	{
-		public string Id { get; set; }
-		
+		private string id;
+		public string Id { get { return this.id; } }
+
 		public Entity()
 		{
 		}

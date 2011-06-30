@@ -5,6 +5,7 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 using Site.Cmd.Domain;
+using System.Reflection;
 
 
 namespace Site.Cmd.Infrastructure
@@ -22,15 +23,22 @@ namespace Site.Cmd.Infrastructure
 
 		public T GetById(string id)
 		{
-			return this.collection.FindOneByIdAs<T>(id);
+			return this.collection.FindOneByIdAs<T>(new BsonObjectId(id));
 		}
 		public void Save(T data)
 		{
-			collection.Save(data.ToBsonDocument());
+			var bson = data.ToBsonDocument();
+			collection.Save(bson);
+			
+			//crazy id setter hack.
+			var type = typeof(Entity);
+			var field = type.GetField("id", BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance); 
+			var objId = bson.GetElement("_id").Value.AsObjectId;
+			field.SetValue(data, objId.ToString());
 		}
 		public void Delete(string id)
 		{
-			collection.Remove(Query.EQ("Id", id));
+			collection.Remove(Query.EQ("_id", new BsonObjectId(id)));
 		}
 		public void Delete(T data)
 		{

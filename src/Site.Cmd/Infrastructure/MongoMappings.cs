@@ -14,21 +14,20 @@ namespace Site.Cmd.Infrastructure
 		{
 			BsonClassMap.RegisterClassMap<Entity>(cm =>
 			{
-				cm.MapIdProperty(o => o.Id);
-				cm.IdMemberMap.SetRepresentation(BsonType.ObjectId);
+				cm.MapIdField("id"); //readonly field (kind of)
+				cm.IdMemberMap.SetRepresentation(BsonType.ObjectId); //will autocreate new objectid for new ones
 			}); 
 
 			BsonClassMap.RegisterClassMap<DomainName>(cm =>
 			{
-				cm.MapField("_domain");
+				cm.MapField("domain");
 			});
 			
 			BsonClassMap.RegisterClassMap<Domain.Site>(cm =>
 			{
-				cm.AutoMap();
-				cm.SetDiscriminator("Site");
-				cm.MapField("_Domains")
-					.SetRepresentation(BsonType.Array);
+				cm.AutoMap(); //automaps public elements
+				cm.SetDiscriminator("Site"); //inherits from entity, need a descriminator
+				cm.MapField("domains"); //private field to map.
 			});
 		}
 	}

@@ -20,12 +20,17 @@ namespace Site.Cmd
 				site.AddDomain(new DomainName("www.helloworld.com"));
 				repo.AddSite(site);
 
+				var site2 = new Domain.Site();
+				site2.Name = "This is a test site";
+				site2.AddDomain(new DomainName("www.helloworld.com"));
+				repo.AddSite(site2);
+
 				var existing = repo.FindById(site.Id);
-				site.AddDomain(new DomainName("www.helloworld.com"));
-				repo.AddSite(site);
 				//var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
 
 				repo.RemoveSite(site);
+
+				repo.RemoveSite(site2);
 
 			}
 			catch (SpecificationException ex)

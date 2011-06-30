@@ -8,25 +8,25 @@ namespace Site.Cmd.Domain
 {
 	public class Site : Entity
 	{
-		IList<DomainName> _Domains;
+		IList<DomainName> domains;
 
 		public string Name { get; set; }
-		public IEnumerable<DomainName> Domains { get { return _Domains; } }
+		public IEnumerable<DomainName> Domains { get { return domains; } }
 
 		public Site()
 		{
-			_Domains = new List<DomainName>();
+			domains = new List<DomainName>();
 		}
 
 		public void AddDomain(DomainName domain)
 		{
 			if (!this.Domains.Contains(domain))
-				_Domains.Add(domain);
+				domains.Add(domain);
 		}
 		public void RemoveDomain(DomainName domain)
 		{
 			if (this.Domains.Contains(domain))
-				_Domains.Remove(domain);
+				domains.Remove(domain);
 		}
 	}
 }
