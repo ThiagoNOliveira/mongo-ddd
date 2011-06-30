@@ -20,14 +20,15 @@ namespace Site.Cmd.Infrastructure
 
 			BsonClassMap.RegisterClassMap<DomainName>(cm =>
 			{
-				cm.MapProperty(o=>o.Domain);
+				cm.MapField("_domain");
 			});
 			
 			BsonClassMap.RegisterClassMap<Domain.Site>(cm =>
 			{
 				cm.AutoMap();
 				cm.SetDiscriminator("Site");
-				cm.MapField("_Domains");
+				cm.MapField("_Domains")
+					.SetRepresentation(BsonType.Array);
 			});
 		}
 	}

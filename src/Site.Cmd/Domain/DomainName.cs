@@ -14,5 +14,10 @@ namespace Site.Cmd.Domain
 		{
 			_domain = domain;
 		}
+
+		public override string ToString()
+		{
+			return this.Domain;
+		}
 	}
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Site.Cmd.Domain;
 using MongoDB.Driver.Builders;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson;
 
 namespace Site.Cmd.Infrastructure
 {
@@ -16,7 +18,7 @@ namespace Site.Cmd.Infrastructure
 
 		public Domain.Site GetByDomain(DomainName domain)
 		{
-			return this.Find(Query.In("Domains", new DomainName[] {domain})).FirstOrDefault();
+			return this.Find(Query.In("Domains", new BsonValue[] { domain.ToBson() })).FirstOrDefault();
 		}
 	}
 }
