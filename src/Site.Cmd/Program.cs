@@ -42,13 +42,5 @@ namespace Site.Cmd
 				Console.WriteLine(ex.ToString());
 			}			
 		}
-
-		static void Create()
-		{
-		}
-
-		static void Get()
-		{
-		}
 	}
 }

@@ -17,13 +17,15 @@ namespace Site.Cmd.Domain
 		
 		public void AddSite(Site site)
 		{
-			//can also perform any new site only business rules here 
+			//can perform any new site business rules
 
 			SaveSite(site);
 		}
 
 		public void UpdateSite(Site site)
 		{
+			//can perform any modify only business rules
+
 			SaveSite(site);
 		}
 

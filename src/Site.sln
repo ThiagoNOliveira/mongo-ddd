@@ -1,12 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C# Express 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Site.Cmd", "Site.Cmd\Site.Cmd.csproj", "{903D3328-BAD4-48B4-865E-D909F32EA1A2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F73767F7-EFEF-463B-A009-A59ABE398622}"
-	ProjectSection(SolutionItems) = preProject
-		..\README = ..\README
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,12 +14,12 @@ Global
 		{903D3328-BAD4-48B4-865E-D909F32EA1A2}.Release|x86.ActiveCfg = Release|x86
 		{903D3328-BAD4-48B4-865E-D909F32EA1A2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Site.Cmd\Site.Cmd.csproj
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
