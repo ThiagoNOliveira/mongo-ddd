@@ -1,0 +1,3 @@
+This is just an experimental project I'm using to learn a little bit about DDD and MongoDB together. The value types are not completely immutable w/ reflection, because I left private fields open for the BSON serializer. 
+
+If you have comments or suggestions, shoot me a message. 
