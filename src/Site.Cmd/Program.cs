@@ -25,8 +25,8 @@ namespace Site.Cmd
 				site2.AddDomain(new DomainName("www.helloworld.com"));
 				repo.AddSite(site2);
 
-				var existing = repo.FindById(site.Id);
-				//var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
+				//var existing = repo.FindById(site.Id);
+				var existing = repo.GetSiteByDomain(new DomainName("www.helloworld.com"));
 
 				repo.RemoveSite(site);
 

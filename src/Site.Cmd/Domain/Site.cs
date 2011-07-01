@@ -28,5 +28,10 @@ namespace Site.Cmd.Domain
 			if (this.Domains.Contains(domain))
 				domains.Remove(domain);
 		}
+		
+		public override string ToString()
+		{
+			return this.Name;
+		}
 	}
 }
